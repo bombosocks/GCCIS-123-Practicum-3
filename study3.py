@@ -106,6 +106,24 @@ def random_count(n):
             break
     return count
 
+def disjoint(a, b):
+    for i in a:
+        if i in b:
+            return False
+        else:
+            pass
+    return True
+
+def random_counts(n):
+    dictionary = {}
+    while len(dictionary) != n:
+        c = random.randint(0, n)
+        if c in dictionary:
+            dictionary[c] += 1
+        else:
+            dictionary[c] = 1
+    return dictionary
+
 def main():
     print(reverse_tuple([1, 3, 4, 5, 6, 7]))
     print(reverse_tuple((1, 5, 6, 6, 7)))
@@ -150,6 +168,15 @@ def main():
 
     random.seed(1)
     print(random_count(10000))
+
+    a = {1, 2, 3, 4}
+    b = {5, 6, 7}
+    c = {3}
+
+    print(disjoint(a, b))
+    print(disjoint(a, c))
+
+    print(random_counts(10))
 
     
 if __name__ == "__main__":
