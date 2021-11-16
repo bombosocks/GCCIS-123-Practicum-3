@@ -14,3 +14,10 @@ def test_reverse_tuple():
 
     assert ("b", 1, "a") == reverse_tuple(a_list)
     assert (3, "b", 1) == reverse_tuple(a_tuple)
+
+def test_make_list():
+    assert ["bruh", 1, 42] == make_list("bruh", 1, 42)
+
+def test_nth_list():
+    a_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    assert [2, 4, 6, 8, 10] == nth_list(a_list, 2)
